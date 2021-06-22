@@ -1,0 +1,6 @@
+#include"global.c"
+#include"setup_allegro.c"
+#include"main.c"
+#include"plot_CA.c"
+#include"settings.c"
+#include"input.c"
