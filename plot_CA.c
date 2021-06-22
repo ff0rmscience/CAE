@@ -12,9 +12,15 @@ void calculate_CA() {
 }
 
 void plot_CA() {
+	if (code_mode == 1) font = code_font;
 	for (int x = 0; x < setting[CELLS]; x++) {
 		for (int y = 0; y <setting[ROWS]; y++) {
-			plot_pixel(x,y, cell[y][x]);
+			if (code_mode == 0) {
+				plot_pixel(x,y, cell[y][x]);
+			}
+			else {
+				plot_code(x,y,cell[y][x]);
+			}
 		}
 	}
 }
@@ -25,8 +31,14 @@ void plot_pixel(int x, int y, int c) {
 							 ca_y+setting[PIXEL_HEIGHT]*y,
 							 ca_x+setting[PIXEL_WIDTH]*(x+1),
                              ca_y+setting[PIXEL_HEIGHT]*(y+1),
-							 state_color[c]
+							 library_color[setting[6 + c]]
+
 	);
+}
+
+void plot_code(int x, int y, int c) {
+	current_color = library_color[setting[6+c]];
+	print_int(ca_x+x*code_width, ca_y+y*code_height,c);
 }
 
 int mod(int x, int m) {

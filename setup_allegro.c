@@ -10,12 +10,17 @@ void set_up_graphics()
 	display = al_create_display(SCREEN_W, SCREEN_H);
 	//font = al_load_font("SourceCodePro-Regular.ttf", font_size, 0);
 	//font = al_load_font("DroidSansMono.ttf", font_size, 0);
+	/*
 	fonts[0] = al_load_font("SourceCodePro-Regular.ttf", font_size, 0);
 	fonts[1] = al_load_font("DroidSansMono.ttf", font_size, 0);
 	fonts[2] = al_load_font("MonospaceTypewriter.ttf", font_size, 0);
 	fonts[3] =  al_load_font("AmaticSC-Regular.ttf", font_size, 0);
 	fonts[4] =  al_load_font("mplus-1m-regular.ttf", font_size, 0);
-	font = fonts[font_number];
+	*/
+	font = fonts[1];
+	setting_font = al_load_font("DroidSansMono.ttf", setting_font_size, 0);
+	rule_font = al_load_font("DroidSansMono.ttf", rule_font_size, 0);
+	code_font = al_load_font("DroidSansMono.ttf", code_font_size, 0);
 	white = al_map_rgb(255, 255, 255);
 	black = al_map_rgb(0, 0, 0);
 	red = al_map_rgb(255, 0, 0);
@@ -24,12 +29,14 @@ void set_up_graphics()
 	yellow = al_map_rgb(255, 255, 0);
 	orange = al_map_rgb(255,165,0);
 	gray = al_map_rgb(gray_intensity,gray_intensity,gray_intensity);
-	state_color[0] = black;
-	state_color[1] = white;
-	state_color[2] = red;
-	state_color[3] = blue;
-	state_color[4] = yellow;
-	state_color[5] = gray;
+	library_color[0] = black;
+    library_color[1] = white;
+    library_color[2] = red;
+    library_color[3] = blue;
+    library_color[4] = yellow;
+	library_color[5] = green;
+	library_color[6] = orange;
+    library_color[7] = gray;
 }
 
 int key_pressed()
