@@ -7,4 +7,4 @@ Important keystrokes are:
 
 (r)andomize rule
 (s)eed the CA
-(c)alculate CA
+(c)ode mode   (see numbers instead of blocks)
